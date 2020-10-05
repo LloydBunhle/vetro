@@ -1,25 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router,Route } from 'react-router-dom'
+import Login from './components/login';
+import home from './components/home';
+import PrivateRouter from './helpers/private';
+import Stores from './components/stores';
+import CreateStore from './components/createStore';
+import Loyalty from './components/loyalty';
+import CreateMember from './components/createMember';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+     <Router>
+       <section className="container">
+       <Route exact path="/" component={Login} />
+       <PrivateRouter exact path="/home" component={home}/>
+       <PrivateRouter exact path="/store" component={Stores}/>
+       <PrivateRouter exact path="/create" component={CreateStore}/>
+       <PrivateRouter exact path="/loyalty" component={Loyalty}/>
+       <PrivateRouter exact path="/createMember" component={CreateMember}/>
+       </section>
+     </Router>
   );
 }
 
