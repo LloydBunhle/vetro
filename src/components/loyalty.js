@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 export default function Loyalty() {
-
+    
     const [memberlist, setMemberlist] = useState([]);
 
     useEffect(() => {
@@ -53,14 +53,20 @@ export default function Loyalty() {
                             <td>
                                 <UncontrolledDropdown>
                                     <DropdownToggle caret>
-                                        Dropdown
+                                        Actions
                                     </DropdownToggle>
                                     <DropdownMenu>
-                                        <DropdownItem header>Header</DropdownItem>
-                                        <DropdownItem disabled>Action</DropdownItem>
-                                        <DropdownItem>Another Action</DropdownItem>
-                                        <DropdownItem divider />
-                                        <DropdownItem>Another Action</DropdownItem>
+                                        <DropdownItem>
+                                            <Link to={`/earn/${member.cell_number}`}>
+                                                Earn Point
+                                            </Link>
+                                        </DropdownItem>
+                                        <DropdownItem>
+                                            <Link to={`/history/${member.cell_number}`}>
+                                                Transactin History
+                                         </Link>
+
+                                        </DropdownItem>
                                     </DropdownMenu>
                                 </UncontrolledDropdown>
                             </td>

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Navbar from './navbar';
 import { getToken, getId } from '../helpers/utils'
 
-export default function CreateStore() {
+export default function CreateStore(props) {
     
     const [createStore, setCreateStore] = useState({
          name:'',
@@ -19,6 +19,7 @@ export default function CreateStore() {
         Axios.post(`http://vapi.vetroms.co.za/api/store?api_token=${token}`, createStore)
             .then(res => {
                 console.log(res)
+                props.history.push('/store')
             })
             .catch(()=>{
                 console.log("Something went wrong")

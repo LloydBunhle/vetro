@@ -19,7 +19,7 @@ export default function Stores() {
                 console.log(res.data.data)
                 setStoreslist(res.data.data);
             })
-            .catch(() => console.log("errot"));
+            .catch(() => console.log("error"));
     }, [])
 
     return (

@@ -8,17 +8,18 @@ export default function CreateMember() {
         first_name: '',
         last_name: '',
         cell_number: '',
+        store_code:'',
         dob: '',
         gender: ''
     })
-    const { first_name, last_name, cell_number, dob, gender } = createMember;
+    const { first_name, last_name, cell_number,store_code, dob, gender } = createMember;
     const onChange = e => setCreatMember({ ...createMember, [e.target.name]: e.target.value })
 
     const onSubmit = e => {
         e.preventDefault();
         const token = getToken();
 
-        Axios.post(`http://vapi.vetroms.co.za/api/loyalty/member/store?api_token=${token}`, createMember)
+        Axios.post(`http://vapi.vetroms.co.za/api/loyalty/member/store/?api_token=${token}`, createMember)
             .then(res => {
                 console.log(res)
             })
@@ -57,6 +58,24 @@ export default function CreateMember() {
                         value={cell_number}
                         onChange={onChange}
                         required
+                    />
+                </div>
+                <div className="form-group">
+                    <label>store_code</label>
+                    <input type="text" className="form-control"
+                        name="store_code"
+                        value={store_code}
+                        onChange={onChange}
+                        
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Gender</label>
+                    <input type="text" className="form-control"
+                        name="gender"
+                        value={gender}
+                        onChange={onChange}
+                        
                     />
                 </div>
                 <div className="form-group">

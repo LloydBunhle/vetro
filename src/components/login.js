@@ -18,7 +18,7 @@ export default function Login(props) {
                 console.log(res)
                 setUserSession(res.data.data.token, res.data.data.id)
                 props.history.push('/home')
-            }).catch(()=> console.log("something went wrong"))
+            }).catch(() => console.log("something went wrong"))
     }
 
 
