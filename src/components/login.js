@@ -23,7 +23,12 @@ export default function Login(props) {
 
 
     return (
-        <div>
+        <div >
+            <div className="jumbotron jumbotron-fluid">
+                <div className="container">
+                    <h5 className="display-4">The Vetro Loyalty API</h5>
+                </div>
+            </div>
             <form className="form" onSubmit={onSubmit}>
                 <div className="form-group">
                     <label >Email address</label>

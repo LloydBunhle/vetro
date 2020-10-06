@@ -30,7 +30,7 @@ export default function Loyalty() {
                 <button type="button" className="btn btn-secondary btn-sm" >Add Member</button>
             </Link>
             <table className="table mt-2">
-                <thead className="thead-dark">
+                <thead className="thead-light">
                     <tr>
                         <th scope="col">First Name</th>
                         <th scope="col">Last Name</th>

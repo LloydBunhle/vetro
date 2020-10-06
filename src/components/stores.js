@@ -31,7 +31,7 @@ export default function Stores() {
             </Link>
             
             <table className="table mt-2">
-                <thead className="thead-dark">
+                <thead className="thead-light">
                     <tr>
                         <th scope="col">Code</th>
                         <th scope="col">Store Name</th>
