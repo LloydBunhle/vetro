@@ -66,3 +66,10 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+### `Dockerizing app steps 
+step 1 : docker build -t loyalty-app .
+step 2 : docker images (optional)
+step 3 : docker run -d -it -p 80:80/tcp --name app loyalty-app:latest
+step 4 : docker tag loyalty-app lloydbunhle/test-repo:loyalty-app
+step 5 : docker push lloydbunhle/test-repo:loyalty-app
