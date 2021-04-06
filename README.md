@@ -68,8 +68,15 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
 ### `Dockerizing app steps 
-step 1 : docker build -t loyalty-app .<br />
+step 1 : docker build -t lloydbunhle/vetro:dev1 .<br />
 step 2 : docker images (optional)<br />
-step 3 : docker run -d -it -p 80:80/tcp --name app loyalty-app:latest<br />
-step 4 : docker tag loyalty-app lloydbunhle/test-repo:loyalty-app<br />
-step 5 : docker push lloydbunhle/test-repo:loyalty-app
+step 3 : docker run -d -it -p 80:80/tcp lloydbunhle/vetro:dev1<br />
+step 5 : docker push lloydbunhle/vetro:dev1
+
+### AWS STEPS 
+
+step 1 : aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 441781717455.dkr.ecr.us-west-2.amazonaws.com<br />
+step 2 : aws ecr create-repository --repository-name vetro-to-aws --region us-west-2<br />
+step 3 :  copy url from repo created on step 2<br />
+step 4 : create task on (fargate) and create container then after paste the copied ulr<br />
+step 5 :  create a cluster and link with .<br />
